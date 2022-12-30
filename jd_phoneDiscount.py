@@ -371,6 +371,8 @@ if __name__ == '__main__':
             if inviteSuccNum >= 10:
                 token = getToken(firstCk, r)
                 time.sleep(0.2)
+                getActivity()
+                time.sleep(0.2)
                 authToken0 = getAuth()
                 time.sleep(0.2)
                 getUserInfo(authToken0)
@@ -378,7 +380,7 @@ if __name__ == '__main__':
                 for i in range(2):
                     invite_type = i + 1
                     print(f"开始第{invite_type}次抽奖")
-                    drawPrize0 = inviteDrawPrize(str(invite_type), authToken)
+                    drawPrize0 = inviteDrawPrize(str(invite_type), authToken0)
                     if "prize_info" not in drawPrize0:
                         print(drawPrize0['message'])
                     else:
